@@ -89,9 +89,7 @@ def build_ar_model(ckpt_path, device):
     # model = AutoModelForCausalLM.from_pretrained(
     #     cfg.model.pretrained_model_path, **model_kwargs
     # )
-    model = AutoModelForCausalLM.from_pretrained(
-        ckpt_path, **model_kwargs
-    )
+    model = AutoModelForCausalLM.from_pretrained(ckpt_path, **model_kwargs)
 
     model.eval()
     return model
