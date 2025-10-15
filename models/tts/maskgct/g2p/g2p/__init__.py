@@ -9,11 +9,14 @@ from models.tts.maskgct.g2p.g2p.text_tokenizers import TextTokenizer
 import LangSegment
 import json
 import re
+import os
+
+resource_path = os.path.dirname(os.path.abspath(__file__))
 
 
 class PhonemeBpeTokenizer:
 
-    def __init__(self, vacab_path="./models/tts/maskgct/g2p/g2p/vocab.json"):
+    def __init__(self, vacab_path=os.path.join(resource_path, "vocab.json")):
         self.lang2backend = {
             "zh": "cmn",
             "ja": "ja",
