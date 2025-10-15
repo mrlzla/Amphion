@@ -114,7 +114,10 @@ def chn_eng_g2p(text: str):
 
 
 text_tokenizer = PhonemeBpeTokenizer()
-with open("./models/tts/maskgct/g2p/g2p/vocab.json", "r") as f:
+
+resource_path = os.path.dirname(os.path.abspath(__file__))
+
+with open(os.path.join(resource_path, "g2p", "vocab.json"), "r") as f:
     json_data = f.read()
 data = json.loads(json_data)
 vocab = data["vocab"]

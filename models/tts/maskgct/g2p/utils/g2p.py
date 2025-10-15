@@ -60,7 +60,9 @@ lang2backend = {
     "de": phonemizer_de,
 }
 
-with open("./models/tts/maskgct/g2p/utils/mls_en.json", "r") as f:
+utils_path = os.path.dirname(os.path.abspath(__file__))
+
+with open(os.path.join(utils_path, "mls_en.json"), "r") as f:
     json_data = f.read()
 token = json.loads(json_data)
 
