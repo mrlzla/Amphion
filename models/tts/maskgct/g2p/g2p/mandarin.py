@@ -17,9 +17,9 @@ import os
 
 # set blank level, {0："none",1:"char", 2:"word"}
 BLANK_LEVEL = 0
+resource_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
 
 # conv = G2PWConverter(style='pinyin', enable_non_tradional_chinese=True)
-resource_path = r"./models/tts/maskgct/g2p"
 poly_all_class_path = os.path.join(
     resource_path, "sources", "g2p_chinese_model", "polychar.txt"
 )
@@ -183,7 +183,7 @@ must_not_er_words = {"女儿", "老儿", "男儿", "少儿", "小儿"}
 
 word_pinyin_dict = {}
 with open(
-    r"./models/tts/maskgct/g2p/sources/chinese_lexicon.txt", "r", encoding="utf-8"
+    os.path.join(resource_path, "sources", "chinese_lexicon.txt"), "r", encoding="utf-8"
 ) as fread:
     txt_list = fread.readlines()
     for txt in txt_list:
@@ -192,8 +192,7 @@ with open(
     fread.close()
 
 pinyin_2_bopomofo_dict = {}
-with open(
-    r"./models/tts/maskgct/g2p/sources/pinyin_2_bpmf.txt", "r", encoding="utf-8"
+with open(os.path.join(resource_path, "sources", "pinyin_2_bpmf.txt"), "r", encoding="utf-8"
 ) as fread:
     txt_list = fread.readlines()
     for txt in txt_list:
@@ -212,7 +211,8 @@ tone_dict = {
 
 bopomofos2pinyin_dict = {}
 with open(
-    r"./models/tts/maskgct/g2p/sources/bpmf_2_pinyin.txt", "r", encoding="utf-8"
+    os.path.join(resource_path, "sources", "bpmf_2_pinyin.txt")
+    , "r", encoding="utf-8"
 ) as fread:
     txt_list = fread.readlines()
     for txt in txt_list:
