@@ -513,6 +513,10 @@ class VevosingInferencePipeline:
         target_src_duration_ratio=1.0,
         flow_matching_steps=32,
         display_audio=False,
+        max_length=2000,
+        temperature=0.8,
+        top_p=0.9,
+        repeat_penalty=1.0,
     ):
         assert self.ar_model is not None
 
@@ -638,6 +642,10 @@ class VevosingInferencePipeline:
             input_content_ids=ar_input_content_ids,
             input_style_ids=ar_input_style_ids,
             prompt_output_ids=prompt_output_ids,
+            temperature=temperature,
+            max_length=max_length,
+            top_p = top_p,
+            repeat_penalty=repeat_penalty
         )
 
         ## Diffusion ##
