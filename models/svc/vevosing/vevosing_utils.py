@@ -582,7 +582,7 @@ class VevosingInferencePipeline:
         target_src_duration_ratio=1.0,
         flow_matching_steps=32,
         display_audio=False,
-        max_length=2000,
+        max_length=4096,
         temperature=0.8,
         top_p=0.9,
         top_k=50,
