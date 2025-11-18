@@ -886,7 +886,7 @@ class Vevo2InferencePipeline:
 
         if self.use_vllm:
             sampling_params = SamplingParams(
-                max_tokens=500,
+                max_tokens=2048,
                 top_k=top_k,
                 top_p=top_p,
                 temperature=temperature,
@@ -913,7 +913,7 @@ class Vevo2InferencePipeline:
             generate_ids = self.ar_model.generate(
                 input_ids=llm_input_ids,
                 min_new_tokens=15,
-                max_new_tokens=500,
+                max_new_tokens=2048,
                 eos_token_id=self.ar_tokenizer.eos_token_id,
                 do_sample=True,
                 top_k=top_k,
